@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nathália Leite · QA</title>
+  <meta name="description" content="Portfólio de Nathália Leite, QA Automation Engineer.">
+  <link rel="canonical" href="https://nathalialence.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#18181b">
+
+  <!-- Prévia ao compartilhar o link (LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nathalialence.github.io/">
+  <meta property="og:title" content="Nathália Leite · QA Automation Engineer">
+  <meta property="og:description" content="5+ anos garantindo qualidade em projetos de consultoria: Cypress, Playwright, testes de API e IA aplicada a testes. CTFL · CTFL-AT.">
+  <meta property="og:image" content="https://nathalialence.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Aplica o tema salvo antes de renderizar, para não "piscar" -->
+  <script>
+    // Ativa as animações de entrada; se o script.js não carregar em 3s, mostra tudo
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!window.portfolioPronto) document.documentElement.classList.remove('js');
+    }, 3000);
+    try {
+      var t = localStorage.getItem('tema');
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+
+  <!--
+    Tradução: todo elemento com data-i18n="chave" tem a versão em inglês
+    no objeto EN do script.js. Ao editar um texto aqui, edite lá também.
+  -->
+
+  <header class="topo">
+    <div class="container topo__inner">
+      <a href="#inicio" class="logo"><span class="logo__dot" aria-hidden="true"></span><span>nathália<span class="logo__qa">.qa</span></span></a>
+      <nav class="menu" id="menu">
+        <a href="#sobre" data-i18n="nav.sobre">Sobre</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <!-- PROJETOS ESCONDIDOS: descomente quando houver projetos reais
+        <a href="#projetos" data-i18n="nav.projetos">Projetos</a> -->
+        <a href="#experiencia" data-i18n="nav.experiencia">Experiência</a>
+        <a href="#formacao" data-i18n="nav.formacao">Formação</a>
+        <a href="#contato" data-i18n="nav.contato">Contato</a>
+      </nav>
+      <div class="topo__acoes">
+        <button class="btn-icone btn-idioma" id="idioma" aria-label="Switch to English">EN</button>
+        <button class="btn-icone" id="tema" aria-label="Alternar tema claro/escuro">
+          <svg class="icone-sol" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icone-lua" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="btn-icone menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ INÍCIO ============ -->
+    <section class="hero container" id="inicio">
+      <div class="hero__texto">
+        <span class="etiqueta"><span class="pulso" aria-hidden="true"></span>QA Automation Engineer · <span data-i18n="hero.remoto">Remoto</span></span>
+        <h1 data-i18n="hero.titulo">Oi, eu sou Nathália.<br><span class="destaque">Qualidade é o meu ponto de partida.</span></h1>
+        <p class="hero__sub" data-i18n="hero.sub">
+          Há mais de 5 anos garanto a qualidade de projetos em consultoria: planos de teste,
+          automação com Cypress e Playwright, testes de API e IA aplicada a testes.
+        </p>
+        <div class="hero__botoes">
+          <a href="#experiencia" class="btn btn--primario" data-i18n="hero.experiencia">Ver experiência</a>
+          <a href="#contato" class="btn btn--secundario" data-i18n="hero.contato">Fale comigo</a>
+        </div>
+      </div>
+
+      <!-- Cartão "bug report": a metáfora de QA do site -->
+      <article class="ticket revelar" aria-label="Ticket de apresentação">
+        <div class="ticket__cabecalho">
+          <span class="ticket__id">CT-001</span>
+          <span class="badge badge--ok" data-i18n="ticket.status">Disponível</span>
+        </div>
+        <h2 class="ticket__titulo" data-i18n="ticket.titulo">Talento de QA encontrado para o seu time</h2>
+        <dl class="ticket__campos">
+          <div><dt data-i18n="ticket.prioridade">Prioridade</dt><dd><span class="badge badge--alta" data-i18n="ticket.alta">Alta</span></dd></div>
+          <div><dt data-i18n="ticket.tipo">Tipo</dt><dd data-i18n="ticket.melhoria">Melhoria</dd></div>
+          <div><dt data-i18n="ticket.ambiente">Ambiente</dt><dd data-i18n="ticket.producao">Produção</dd></div>
+          <div><dt data-i18n="ticket.responsavel">Responsável</dt><dd data-i18n="ticket.voce">Você 👋</dd></div>
+        </dl>
+        <div class="ticket__secao">
+          <h3 data-i18n="ticket.passos">Passos</h3>
+          <ol class="passos" id="passos">
+            <li data-i18n="ticket.passo1">Acessar https://nathalialence.github.io</li>
+            <li data-i18n="ticket.passo2">Navegar pelas seções da página</li>
+            <li data-i18n="ticket.passo3">Clicar em “Contato” no menu</li>
+            <li data-i18n="ticket.passo4">Entrar em contato por um dos canais disponíveis</li>
+          </ol>
+        </div>
+        <div class="ticket__secao ticket__resultado">
+          <div><h3 data-i18n="ticket.esperado">Resultado esperado</h3><p data-i18n="ticket.esperadoValor">Mais qualidade no seu time.</p></div>
+          <div><h3 data-i18n="ticket.obtido">Resultado obtido</h3><p class="ok" id="resultado">⏳ executando…</p></div>
+        </div>
+        <button class="btn btn--mini" id="reexecutar" data-i18n="ticket.reexecutar">↻ Executar de novo</button>
+      </article>
+
+      <!-- Faixa de números: ocupa a largura toda, abaixo do texto e do ticket -->
+      <div class="numeros">
+        <div class="numero"><strong>5+</strong><span data-i18n="num.anos">anos em QA</span></div>
+        <div class="numero"><strong>20+</strong><span data-i18n="num.projetos">projetos de clientes</span></div>
+        <div class="numero"><strong>10</strong><span data-i18n="num.setores">setores atendidos</span></div>
+        <div class="numero"><strong>2</strong><span data-i18n="num.cert">certificações ISTQB</span></div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="secao" id="sobre">
+      <div class="container">
+        <div class="secao__cabecalho revelar">
+          <span class="secao__num" aria-hidden="true">01</span>
+          <div>
+            <p class="sobretitulo" data-i18n="sobre.sobretitulo">Sobre mim</p>
+            <h2 class="titulo" data-i18n="sobre.titulo">Testar é cuidar de quem vai usar.</h2>
+          </div>
+        </div>
+        <div class="sobre revelar">
+          <div class="sobre__texto">
+            <p data-i18n="sobre.p1">
+              Sou formada em Análise e Desenvolvimento de Sistemas e cheguei a QA passando
+              por suporte de sistemas e análise funcional. Essa trajetória me ensinou a
+              enxergar o produto pelos olhos de quem usa e de quem pediu.
+            </p>
+            <p data-i18n="sobre.p2">
+              Hoje, conduzo a qualidade de projetos de clientes diferentes:
+              analiso requisitos, monto planos de teste, executo testes manuais e
+              automatizados, valido APIs, preparo dados e ambientes, e cuido da regressão,
+              sempre lado a lado com o time de desenvolvimento.
+            </p>
+          </div>
+          <div class="cards-mini">
+            <div class="card-mini"><span class="card-mini__icone" aria-hidden="true">🧪</span><h3 data-i18n="sobre.c1t">Automação de testes</h3><p data-i18n="sobre.c1">Cypress, Playwright e testes de API.</p></div>
+            <div class="card-mini"><span class="card-mini__icone" aria-hidden="true">📋</span><h3 data-i18n="sobre.c2t">Visão de negócio</h3><p data-i18n="sobre.c2">Da análise funcional: requisitos claros antes do código.</p></div>
+            <div class="card-mini"><span class="card-mini__icone" aria-hidden="true">🤝</span><h3 data-i18n="sobre.c3t">Foco em quem usa</h3><p data-i18n="sobre.c3">Do suporte: entender a dor do usuário e resolver na prática.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS (fundo grafite) ============ -->
+    <section class="secao secao--escura" id="skills">
+      <div class="container">
+        <div class="secao__cabecalho revelar">
+          <span class="secao__num" aria-hidden="true">02</span>
+          <div>
+            <p class="sobretitulo">Skills</p>
+            <h2 class="titulo" data-i18n="skills.titulo">Minha suíte de ferramentas</h2>
+          </div>
+        </div>
+        <p class="subtitulo" data-i18n="skills.sub">O que eu uso para planejar, executar e reportar testes.</p>
+        <div class="skills revelar">
+          <div class="skill">
+            <svg class="skill__icone" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5 3.5-5 3.5z"/></svg>
+            <h3 data-i18n="skills.automacao">Automação</h3><ul class="chips"><li>Cypress</li><li>Playwright</li></ul>
+          </div>
+          <div class="skill">
+            <svg class="skill__icone" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg>
+            <h3>APIs</h3><ul class="chips"><li>Postman</li><li>Swagger</li></ul>
+          </div>
+          <div class="skill">
+            <svg class="skill__icone" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg>
+            <h3 data-i18n="skills.linguagens">Linguagens</h3><ul class="chips"><li>JavaScript</li><li>TypeScript</li><li>Python</li></ul>
+          </div>
+          <div class="skill">
+            <svg class="skill__icone" aria-hidden="true" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg>
+            <h3 data-i18n="skills.dados">Dados</h3><ul class="chips"><li>SQL</li><li>SQL Server</li><li>PostgreSQL</li><li>DBeaver</li></ul>
+          </div>
+          <div class="skill">
+            <svg class="skill__icone" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6l2 2 3-3M4 14l2 2 3-3M12 7h8M12 15h8"/></svg>
+            <h3 data-i18n="skills.gestao">Gestão e CI</h3><ul class="chips"><li>Jira</li><li>Azure DevOps</li><li>GitHub Actions</li></ul>
+          </div>
+          <div class="skill">
+            <svg class="skill__icone" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg>
+            <h3 data-i18n="skills.ia">IA para testes</h3><ul class="chips"><li>ChatGPT</li><li>Claude</li><li>Copilot</li></ul>
+          </div>
+          <div class="skill skill--extra">
+            <svg class="skill__icone" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+            <h3 data-i18n="skills.tambem">Também</h3><ul class="chips"><li data-i18n="skills.acessibilidade">Acessibilidade</li><li>Mobile</li><li>BDD/Gherkin</li><li>Scrum</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETOS ============ -->
+    <!-- PROJETOS ESCONDIDOS: tire o "hidden" e volte a numeração (03 Projetos, 04 Experiência, 05 Formação) -->
+    <section class="secao" id="projetos" hidden>
+      <div class="container">
+        <div class="secao__cabecalho revelar">
+          <span class="secao__num" aria-hidden="true">03</span>
+          <div>
+            <p class="sobretitulo" data-i18n="projetos.sobretitulo">Projetos</p>
+            <h2 class="titulo" data-i18n="projetos.titulo">Casos de teste que eu escrevi</h2>
+          </div>
+        </div>
+        <p class="subtitulo" data-i18n="projetos.sub">Cada projeto: o problema, o que eu fiz e o resultado.</p>
+
+        <!-- EDITAR: duplique um <article class="projeto"> para cada projeto -->
+        <div class="projetos">
+          <article class="projeto revelar">
+            <div class="projeto__topo">
+              <span class="projeto__num">TC-01</span>
+              <span class="badge badge--ok" data-i18n="status.passou">✓ passou</span>
+            </div>
+            <h3>Nome do projeto</h3>
+            <p>
+              Descreva em 2–3 frases o problema que o projeto resolve e como você resolveu.
+              Ex.: automação E2E do fluxo de login e checkout de uma loja de exemplo.
+            </p>
+            <ul class="chips chips--pequenos"><li>Playwright</li><li>TypeScript</li><li>GitHub Actions</li></ul>
+            <div class="projeto__links">
+              <a href="#" class="link" data-i18n="link.github">Ver no GitHub →</a>
+            </div>
+          </article>
+
+          <article class="projeto revelar">
+            <div class="projeto__topo">
+              <span class="projeto__num">TC-02</span>
+              <span class="badge badge--ok" data-i18n="status.passou">✓ passou</span>
+            </div>
+            <h3>Nome do projeto</h3>
+            <p>
+              Ex.: coleção de testes de API com validação de contratos, status e regras de
+              negócio, rodando em pipeline a cada push.
+            </p>
+            <ul class="chips chips--pequenos"><li>Postman</li><li>Newman</li><li>CI</li></ul>
+            <div class="projeto__links">
+              <a href="#" class="link" data-i18n="link.github">Ver no GitHub →</a>
+            </div>
+          </article>
+
+          <article class="projeto revelar">
+            <div class="projeto__topo">
+              <span class="projeto__num">TC-03</span>
+              <span class="badge badge--andamento" data-i18n="status.andamento">● em andamento</span>
+            </div>
+            <h3>Nome do projeto</h3>
+            <p>
+              Ex.: plano de testes completo para um app real, com casos positivos,
+              negativos e de borda, e relatório de bugs encontrados.
+            </p>
+            <ul class="chips chips--pequenos"><li>Plano de testes</li><li>Jira</li></ul>
+            <div class="projeto__links">
+              <a href="#" class="link" data-i18n="link.documento">Ver documento →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIÊNCIA ============ -->
+    <section class="secao secao--alt" id="experiencia">
+      <div class="container">
+        <div class="secao__cabecalho revelar">
+          <span class="secao__num" aria-hidden="true">03</span>
+          <div>
+            <p class="sobretitulo" data-i18n="exp.sobretitulo">Experiência</p>
+            <h2 class="titulo" data-i18n="exp.titulo">Histórico de execuções</h2>
+          </div>
+        </div>
+
+        <ol class="linha-tempo">
+          <li class="revelar">
+            <span class="linha-tempo__data" data-i18n="exp.qa.data">jan/2021 — atual</span>
+            <h3><span data-i18n="exp.qa.cargo">Analista de Testes/QA</span> · <span class="empresa">Kron Digital</span></h3>
+            <ul>
+              <li data-i18n="exp.qa.1">Atuação em <strong>mais de 20 projetos</strong> de clientes de setores variados: varejo, logística, saúde e segurança, RH, engenharia, ERP, aplicativos mobile e soluções de IA (RAG).</li>
+              <li data-i18n="exp.qa.2">Testes de um sistema internacional com <strong>mais de 12 módulos</strong>, usado em vários países e disponível em <strong>mais de 15 idiomas</strong>.</li>
+              <li data-i18n="exp.qa.3">Criação de um projeto de automação E2E <strong>do zero</strong>, com Cypress e Playwright em JavaScript, com <strong>cerca de 50 cenários</strong> automatizados.</li>
+              <li data-i18n="exp.qa.4">Testes de API com Postman e Swagger, validando respostas e <strong>regras de negócio</strong>.</li>
+              <li data-i18n="exp.qa.5">Desenvolvimento de um <strong>sistema com IA</strong> (via API) que gera cenários de teste em Gherkin. No dia a dia, também uso IA para revisar e gerar scripts de automação e documentar testes.</li>
+              <li data-i18n="exp.qa.6">Criação do <strong>template de cenários de teste</strong> e participação na definição do template de User Stories, padronizando a documentação dos times.</li>
+              <li data-i18n="exp.qa.7"><strong>Orientação de novos QAs e POs</strong> e participação ativa em refinamentos e na escrita de critérios de aceite.</li>
+            </ul>
+          </li>
+          <li class="revelar">
+            <span class="linha-tempo__data" data-i18n="exp.af.data">nov/2020 — jan/2021</span>
+            <h3><span data-i18n="exp.af.cargo">Analista Funcional</span> · <span class="empresa">Kron Digital</span></h3>
+            <ul>
+              <li data-i18n="exp.af.1">Reuniões de análise de negócio e levantamento de requisitos direto com o cliente.</li>
+              <li data-i18n="exp.af.2">Documentação funcional de projetos Mobile e Web.</li>
+            </ul>
+          </li>
+          <li class="revelar">
+            <span class="linha-tempo__data" data-i18n="exp.ti.data">out/2019 — nov/2020</span>
+            <h3><span data-i18n="exp.ti.cargo">Auxiliar de TI</span> · <span class="empresa">MTCORP Soluções Tecnológicas</span></h3>
+            <ul>
+              <li data-i18n="exp.ti.1">Suporte e treinamento para <strong>mais de 300 usuários</strong> nos sistemas da empresa.</li>
+              <li data-i18n="exp.ti.2">Criação de <strong>documentação de procedimentos</strong> para chamados específicos, padronizando o atendimento.</li>
+              <li data-i18n="exp.ti.3">Contato com fornecedores de software e gestão de acessos e uso da rede.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ FORMAÇÃO ============ -->
+    <section class="secao" id="formacao">
+      <div class="container">
+        <div class="secao__cabecalho revelar">
+          <span class="secao__num" aria-hidden="true">04</span>
+          <div>
+            <p class="sobretitulo" data-i18n="formacao.titulo">Formação</p>
+            <h2 class="titulo" data-i18n="formacao.h2">Sempre em evolução</h2>
+          </div>
+        </div>
+
+        <div class="formacao-grid">
+          <!-- Coluna 1: cursos, do mais recente ao mais antigo -->
+          <div class="revelar">
+            <h3 class="rotulo" data-i18n="formacao.cursos">Cursos</h3>
+            <ol class="linha-tempo linha-tempo--compacta">
+              <li>
+                <span class="linha-tempo__data">Faculdade VINCIT · 2026 — 2027</span>
+                <h3><span data-i18n="formacao.pgats">Especialização em Automação de Testes de Software (PGATS)</span> <span class="badge badge--andamento" data-i18n="status.andamento">● em andamento</span></h3>
+              </li>
+              <li>
+                <span class="linha-tempo__data">UTFPR · 2024 — 2025</span>
+                <h3 data-i18n="formacao.mba">MBA em Engenharia de Software</h3>
+              </li>
+              <li>
+                <span class="linha-tempo__data">IFSP · 2016 — 2019</span>
+                <h3 data-i18n="formacao.ads">Tecnologia em Análise e Desenvolvimento de Sistemas</h3>
+              </li>
+            </ol>
+          </div>
+
+          <!-- Coluna 2: certificações -->
+          <div class="blocos revelar">
+            <div class="bloco bloco--rosa">
+              <h3 class="rotulo" data-i18n="cert.titulo">Certificações e cursos</h3>
+              <ul class="bloco__lista">
+                <li><strong>CTFL</strong><span>Certified Tester Foundation Level · ISTQB</span></li>
+                <li><strong>CTFL-AT</strong><span>Certified Tester Foundation Level – Agile Tester · ISTQB</span></li>
+                <li><strong>SFC</strong><span>Scrum Fundamentals Certified</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Idiomas: faixa horizontal ocupando a largura toda -->
+        <div class="bloco bloco--mostarda bloco--horizontal revelar">
+          <h3 class="rotulo" data-i18n="idiomas.titulo">Idiomas e intercâmbio</h3>
+          <ul class="bloco__lista">
+            <li><strong data-i18n="idiomas.pt">Português</strong><span data-i18n="idiomas.nativo">Nativo</span></li>
+            <li><strong data-i18n="idiomas.en">Inglês</strong><span data-i18n="idiomas.nivel">Nível A2</span></li>
+            <li><strong data-i18n="idiomas.intercambio">Intercâmbio em Dublin, Irlanda</strong><span data-i18n="idiomas.curso">General English Course · ISI Dublin · 1 mês</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO (bloco de destaque) ============ -->
+    <section class="secao secao--alt" id="contato">
+      <div class="container">
+        <div class="cta revelar">
+          <div class="cta__texto">
+            <p class="sobretitulo" data-i18n="contato.sobretitulo">Contato</p>
+            <h2 data-i18n="contato.titulo">Vamos testar algo juntos?</h2>
+            <p class="cta__sub" data-i18n="contato.sub">Disponível para novas oportunidades, trocas e projetos em qualidade de software.</p>
+            <p class="cta__local">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+              <span data-i18n="contato.local">Piracicaba/SP · trabalho remoto</span>
+            </p>
+          </div>
+          <!-- EDITAR: seus contatos -->
+          <div class="cta__acoes">
+            <div class="cta__email">
+              <a href="mailto:nathalia.lence@gmail.com"><span aria-hidden="true">✉</span> <span id="email">nathalia.lence@gmail.com</span></a>
+              <button class="cta__copiar" id="copiar">Copiar</button>
+            </div>
+            <div class="cta__redes">
+              <a href="https://www.linkedin.com/in/nathalia-leite" target="_blank" rel="noopener">LinkedIn ↗</a>
+              <a href="https://github.com/NathaliaLence" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__inner">
+      <span>© <span id="ano"></span> Nathália Leite</span>
+      <span class="mono" data-i18n="rodape.build">build #001 · todos os testes passaram ✓</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
